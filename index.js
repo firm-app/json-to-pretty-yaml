@@ -1,8 +1,16 @@
 (function() {
     "use strict";
 
-    var typeOf = require('remedial').typeOf;
-    var trimWhitespace = require('remove-trailing-spaces');
+    var typeOf = function(val) {
+        if (val === null || val === undefined) return 'null';
+        if (Object.prototype.toString.call(val) === '[object Array]') return 'array';
+        return typeof val;
+    };
+    var trimWhitespace = function (str) {
+        return String(str || '').split("\n").map(function (x) {
+            return x.trimRight();
+        }).join("\n");
+    };
 
     function stringify(data) {
         var handlers, indentLevel = '';
