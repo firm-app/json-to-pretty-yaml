@@ -37,5 +37,11 @@
     "type": "git",
     "url": "https://github.com/alexcrist/json-to-pretty-yaml.git"
   },
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "jest": {
+    "verbose": true,
+    "testEnvironmentOptions": {
+      "url": "http://localhost/"
+    }
+  }
 }
